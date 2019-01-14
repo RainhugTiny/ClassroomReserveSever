@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>会议室和教室取消预定系统</title> 
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+</head>
+ 
+<body class="gray-bg">
+<div class="container">
+	<div class="row">
+	    <div class="col-sm-7">
+	        <div class="ibox float-e-margins">	          
+	            <div class="ibox-content">
+	                <div class="row">
+	                    <div class="col-sm-6 b-r">
+	                        <h3 class="m-t-none m-b">会议室和教室取消预定系统</h3>
+	                        <p>请输入日期和教室或会议室号码</p>
+	                        <form role="form" action="{:url('cancel/docancel')}" method="post">
+	                            <div class="form-group">
+	                                <label>日期</label>
+	                                <input type="text" placeholder="请输入日期" class="form-control" name="date">
+	                            </div>
+	                            <div class="form-group">
+	                                <label>教室或会议室号码</label>
+	                                <input type="text" placeholder="请输入教室或会议室号码" class="form-control" name="roomnumber">
+	                            </div>
+	                            <div>
+	                                <button class="btn btn-sm btn-primary pull-right m-t-n-xs" type="submit"><strong>取 消 预 定</strong>
+	                                </button>	                               
+	                            </div>
+                                <div>
+                                  <p> 没有账号？请<a href="{:url('regist/index')}">注册</a></p>
+                                </div>
+	                        </form>
+	                    </div>	                   
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+</div> 
+<script src="/static/js/jquery.min.js?v=2.1.4"></script>
+<script src="/static/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
