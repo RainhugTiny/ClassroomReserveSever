@@ -28,4 +28,18 @@ class Rooms extends Model {
     $res = Db::name('userinf')->where('room',$room)->delete(); 
     return $res;
   }
+  public function userRegist($name,$password)
+  {
+    $user=['user_name'=>$name,'user_pwd'=>md5($password)];
+    $ok=db('users')->insert($user);
+    return $ok;
+  }
+  public function userLogin($name,$password)
+  {
+    $has = db('users')->where('user_name', $name)->find();
+    if($has['user_pwd'] != md5($password)){
+    	$this->error('用户名密码错误');
+    }
+    return $has['user_pwd'] == md5($password);
+  }
 }

@@ -38,5 +38,25 @@ class Rooms extends Controller
      $data=$model->deleteUserInfo($date,$room);
      return json($data);
   }
+    public function regist()
+  {
+     $name=input('name');
+     $password=input('password');
+     //$username=input('username');
+     $model = model('Rooms');
+     //$data=$model->deleteUserInfo($date,$room,$username);
+     $data=$model->userRegist($name,$password);
+     return json($data);
+  }
+  public function login()
+  {
+     $name=input('name');
+     $password=input('password');
+     //$username=input('username');
+     $model = model('Rooms');
+     //$data=$model->deleteUserInfo($date,$room,$username);
+     $data=$model->userLogin($name,$password);
+     return json($data);
+  }
   
 }
